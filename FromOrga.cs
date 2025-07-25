@@ -17,6 +17,13 @@ namespace Arkone_Logiciel_Evenementiel
             InitializeComponent();
         }
 
+        private void btn_Retour_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormHome home = new FormHome();
+            home.Show();
+        }
+
         //Ouvre une vue vers la liste des évènements
         private void button1_Click(object sender, EventArgs e)
         {
