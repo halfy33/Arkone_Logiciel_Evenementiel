@@ -52,7 +52,7 @@
             // 
             // lbl_Code
             // 
-            lbl_Code.Font = new Font("Verdana", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_Code.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_Code.Location = new Point(154, 81);
             lbl_Code.Name = "lbl_Code";
             lbl_Code.Size = new Size(507, 56);

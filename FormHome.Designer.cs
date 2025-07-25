@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btn_ModuleAgent = new Button();
+            s = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btn_ModuleAgent
             // 
-            button1.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(175, 62);
-            button1.Name = "button1";
-            button1.Size = new Size(457, 132);
-            button1.TabIndex = 0;
-            button1.Text = "MODULE AGENT";
-            button1.UseVisualStyleBackColor = true;
+            btn_ModuleAgent.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_ModuleAgent.Location = new Point(175, 62);
+            btn_ModuleAgent.Name = "btn_ModuleAgent";
+            btn_ModuleAgent.Size = new Size(457, 132);
+            btn_ModuleAgent.TabIndex = 0;
+            btn_ModuleAgent.Text = "MODULE AGENT";
+            btn_ModuleAgent.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // s
             // 
-            button2.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(175, 243);
-            button2.Name = "button2";
-            button2.Size = new Size(457, 132);
-            button2.TabIndex = 1;
-            button2.Text = "MODULE ORGANISATEUR";
-            button2.UseVisualStyleBackColor = true;
+            s.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            s.Location = new Point(175, 243);
+            s.Name = "s";
+            s.Size = new Size(457, 132);
+            s.TabIndex = 1;
+            s.Text = "MODULE ORGANISATEUR";
+            s.UseVisualStyleBackColor = true;
             // 
             // FormHome
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(s);
+            Controls.Add(btn_ModuleAgent);
             Name = "FormHome";
             Text = "Accueil";
             ResumeLayout(false);
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btn_ModuleAgent;
+        private Button s;
     }
 }
