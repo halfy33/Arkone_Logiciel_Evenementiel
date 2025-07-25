@@ -47,9 +47,9 @@
             // listbox_evenement
             // 
             listbox_evenement.FormattingEnabled = true;
-            listbox_evenement.Location = new Point(71, 71);
+            listbox_evenement.Location = new Point(12, 58);
             listbox_evenement.Name = "listbox_evenement";
-            listbox_evenement.Size = new Size(672, 284);
+            listbox_evenement.Size = new Size(776, 344);
             listbox_evenement.TabIndex = 1;
             listbox_evenement.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
