@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            listBox1 = new ListBox();
+            listbox_evenement = new ListBox();
             btn_Retour = new Button();
             SuspendLayout();
             // 
@@ -44,14 +44,14 @@
             label1.Text = "Liste des Évènements";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // listBox1
+            // listbox_evenement
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(71, 71);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(672, 284);
-            listBox1.TabIndex = 1;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            listbox_evenement.FormattingEnabled = true;
+            listbox_evenement.Location = new Point(71, 71);
+            listbox_evenement.Name = "listbox_evenement";
+            listbox_evenement.Size = new Size(672, 284);
+            listbox_evenement.TabIndex = 1;
+            listbox_evenement.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // btn_Retour
             // 
@@ -69,7 +69,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btn_Retour);
-            Controls.Add(listBox1);
+            Controls.Add(listbox_evenement);
             Controls.Add(label1);
             Name = "FormEvenements";
             Text = "FormEvenements";
@@ -80,7 +80,7 @@
         #endregion
 
         private Label label1;
-        private ListBox listBox1;
+        private ListBox listbox_evenement;
         private Button btn_Retour;
     }
 }

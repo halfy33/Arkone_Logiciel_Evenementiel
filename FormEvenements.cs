@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arkone_Logiciel_Evenementiel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Arkone_Logiciel_Evenementiel
         public FormEvenements()
         {
             InitializeComponent();
+            list_evenement();
         }
 
 
@@ -30,6 +32,23 @@ namespace Arkone_Logiciel_Evenementiel
             this.Hide();
             FromOrga home = new FromOrga();
             home.Show();
+        }
+
+        private void list_evenement()
+        {
+            using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
+            {
+                var evenements = db.Evenements
+                    .OrderBy(e => e.DateEvenement)
+                    .ToList();
+
+                listbox_evenement.Items.Clear(); // Vide la liste avant ajout
+
+                foreach (var evt in evenements)
+                {
+                    listbox_evenement.Items.Add(evt); // Appelle automatiquement evt.ToString()
+                }
+            }
         }
     }
 }

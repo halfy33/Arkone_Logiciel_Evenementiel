@@ -18,4 +18,5 @@ public partial class Evenement
     public string Longitude { get; set; } = null!;
 
     public virtual ICollection<Invitation> Invitations { get; set; } = new List<Invitation>();
+
 }
