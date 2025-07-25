@@ -35,12 +35,12 @@
             txt_nameEvent = new TextBox();
             txt_LieuEvent = new TextBox();
             txt_LatitudeEvent = new TextBox();
-            txt_DateEvent = new TextBox();
             btn_CreateEvent = new Button();
             label5 = new Label();
             btn_Retour = new Button();
             label6 = new Label();
             txt_LongitudeEvent = new TextBox();
+            txt_DateEvent = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -100,16 +100,9 @@
             txt_LatitudeEvent.Size = new Size(125, 27);
             txt_LatitudeEvent.TabIndex = 6;
             // 
-            // txt_DateEvent
-            // 
-            txt_DateEvent.Location = new Point(356, 325);
-            txt_DateEvent.Name = "txt_DateEvent";
-            txt_DateEvent.Size = new Size(125, 27);
-            txt_DateEvent.TabIndex = 7;
-            // 
             // btn_CreateEvent
             // 
-            btn_CreateEvent.Location = new Point(356, 375);
+            btn_CreateEvent.Location = new Point(368, 378);
             btn_CreateEvent.Name = "btn_CreateEvent";
             btn_CreateEvent.Size = new Size(94, 29);
             btn_CreateEvent.TabIndex = 8;
@@ -153,17 +146,24 @@
             txt_LongitudeEvent.Size = new Size(125, 27);
             txt_LongitudeEvent.TabIndex = 12;
             // 
+            // txt_DateEvent
+            // 
+            txt_DateEvent.Location = new Point(356, 328);
+            txt_DateEvent.Name = "txt_DateEvent";
+            txt_DateEvent.Size = new Size(250, 27);
+            txt_DateEvent.TabIndex = 13;
+            // 
             // FormCreateEvent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txt_DateEvent);
             Controls.Add(txt_LongitudeEvent);
             Controls.Add(label6);
             Controls.Add(btn_Retour);
             Controls.Add(label5);
             Controls.Add(btn_CreateEvent);
-            Controls.Add(txt_DateEvent);
             Controls.Add(txt_LatitudeEvent);
             Controls.Add(txt_LieuEvent);
             Controls.Add(txt_nameEvent);
@@ -186,11 +186,11 @@
         private TextBox txt_nameEvent;
         private TextBox txt_LieuEvent;
         private TextBox txt_LatitudeEvent;
-        private TextBox txt_DateEvent;
         private Button btn_CreateEvent;
         private Label label5;
         private Button btn_Retour;
         private Label label6;
         private TextBox txt_LongitudeEvent;
+        private DateTimePicker txt_DateEvent;
     }
 }

@@ -45,11 +45,14 @@
             // 
             // txt_VerifCode
             // 
-            txt_VerifCode.Location = new Point(150, 140);
+            txt_VerifCode.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txt_VerifCode.Location = new Point(154, 151);
             txt_VerifCode.Multiline = true;
             txt_VerifCode.Name = "txt_VerifCode";
             txt_VerifCode.Size = new Size(511, 105);
             txt_VerifCode.TabIndex = 1;
+            txt_VerifCode.TextAlign = HorizontalAlignment.Center;
+            txt_VerifCode.KeyPress += txt_VerifCode_KeyPress;
             // 
             // lbl_Code
             // 
