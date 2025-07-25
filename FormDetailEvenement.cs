@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arkone_Logiciel_Evenementiel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Arkone_Logiciel_Evenementiel
 {
     public partial class FormDetailEvenement : Form
     {
-        public FormDetailEvenement()
+        private Evenement selectedEvenement;
+
+        public FormDetailEvenement(Evenement evenement)
         {
             InitializeComponent();
+            selectedEvenement = evenement;
+
+            label_evenementDescription.Text = selectedEvenement.ToString();
+            label_nomEvenement.Text = selectedEvenement.NomEvenement;
         }
 
         private void btn_Retour_Click(object sender, EventArgs e)

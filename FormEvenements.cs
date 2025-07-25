@@ -22,9 +22,12 @@ namespace Arkone_Logiciel_Evenementiel
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FormDetailEvenement formSelectedEvenement = new FormDetailEvenement();
-            formSelectedEvenement.Show();
-            this.Hide();
+            if (listbox_evenement.SelectedItem is Evenement evt)
+            {
+                FormDetailEvenement formSelectedEvenement = new FormDetailEvenement(evt);
+                formSelectedEvenement.Show();
+                this.Hide();
+            }           
         }
 
         private void btn_Retour_Click(object sender, EventArgs e)
