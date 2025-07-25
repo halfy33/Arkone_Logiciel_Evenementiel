@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkone_Logiciel_Evenementiel", "Arkone_Logiciel_Evenementiel.csproj", "{6EF92E8A-D712-498B-B794-47A9D4345DAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EF92E8A-D712-498B-B794-47A9D4345DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF92E8A-D712-498B-B794-47A9D4345DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF92E8A-D712-498B-B794-47A9D4345DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF92E8A-D712-498B-B794-47A9D4345DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B901C5CD-25C0-41F2-800C-C74ADCFA7E68}
+	EndGlobalSection
+EndGlobal
