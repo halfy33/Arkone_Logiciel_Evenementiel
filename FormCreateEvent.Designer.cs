@@ -115,6 +115,7 @@
             btn_CreateEvent.TabIndex = 8;
             btn_CreateEvent.Text = "Créer";
             btn_CreateEvent.UseVisualStyleBackColor = true;
+            btn_CreateEvent.Click += btn_CreateEvent_Click;
             // 
             // label5
             // 
