@@ -31,6 +31,7 @@
             btn_VerifCode = new Button();
             txt_VerifCode = new TextBox();
             lbl_Code = new Label();
+            btn_Retour = new Button();
             SuspendLayout();
             // 
             // btn_VerifCode
@@ -59,11 +60,22 @@
             lbl_Code.TabIndex = 2;
             lbl_Code.Text = "Saisir le code d'accès : ";
             // 
+            // btn_Retour
+            // 
+            btn_Retour.Location = new Point(6, 415);
+            btn_Retour.Name = "btn_Retour";
+            btn_Retour.Size = new Size(64, 29);
+            btn_Retour.TabIndex = 3;
+            btn_Retour.Text = "Retour";
+            btn_Retour.UseVisualStyleBackColor = true;
+            btn_Retour.Click += btn_Retour_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_Retour);
             Controls.Add(lbl_Code);
             Controls.Add(txt_VerifCode);
             Controls.Add(btn_VerifCode);
@@ -78,5 +90,6 @@
         private Button btn_VerifCode;
         private TextBox txt_VerifCode;
         private Label lbl_Code;
+        private Button btn_Retour;
     }
 }

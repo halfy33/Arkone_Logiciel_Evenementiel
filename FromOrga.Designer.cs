@@ -30,6 +30,7 @@
         {
             button1 = new Button();
             button2 = new Button();
+            btn_Retour = new Button();
             SuspendLayout();
             // 
             // button1
@@ -52,11 +53,22 @@
             button2.Text = "Créer un événement";
             button2.UseVisualStyleBackColor = true;
             // 
+            // btn_Retour
+            // 
+            btn_Retour.Location = new Point(8, 413);
+            btn_Retour.Name = "btn_Retour";
+            btn_Retour.Size = new Size(64, 29);
+            btn_Retour.TabIndex = 4;
+            btn_Retour.Text = "Retour";
+            btn_Retour.UseVisualStyleBackColor = true;
+            btn_Retour.Click += btn_Retour_Click;
+            // 
             // FromOrga
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_Retour);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "FromOrga";
@@ -68,5 +80,6 @@
 
         private Button button1;
         private Button button2;
+        private Button btn_Retour;
     }
 }
