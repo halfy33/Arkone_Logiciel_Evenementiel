@@ -15,6 +15,21 @@ namespace Arkone_Logiciel_Evenementiel
         public FormHome()
         {
             InitializeComponent();
+            
+        }
+
+        private void btn_ModuleAgent_Click(object sender, EventArgs e)
+        {
+            Form1 monForm = new Form1();
+            monForm.Show();
+            this.Hide();
+        }
+
+        private void s_Click(object sender, EventArgs e)
+        {
+            FromOrga formOrga = new FromOrga();
+            formOrga.Show();
+            this.Hide();
         }
     }
 }

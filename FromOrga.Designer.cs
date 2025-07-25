@@ -1,6 +1,6 @@
 ﻿namespace Arkone_Logiciel_Evenementiel
 {
-    partial class FormHome
+    partial class FromOrga
     {
         /// <summary>
         /// Required designer variable.
@@ -28,47 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btn_ModuleAgent = new Button();
-            s = new Button();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
-            // btn_ModuleAgent
+            // button1
             // 
-            btn_ModuleAgent.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_ModuleAgent.Location = new Point(175, 62);
-            btn_ModuleAgent.Name = "btn_ModuleAgent";
-            btn_ModuleAgent.Size = new Size(457, 132);
-            btn_ModuleAgent.TabIndex = 0;
-            btn_ModuleAgent.Text = "MODULE AGENT";
-            btn_ModuleAgent.UseVisualStyleBackColor = true;
-            btn_ModuleAgent.Click += btn_ModuleAgent_Click;
+            button1.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(103, 245);
+            button1.Name = "button1";
+            button1.Size = new Size(580, 114);
+            button1.TabIndex = 0;
+            button1.Text = "Consulter les événements";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // s
+            // button2
             // 
-            s.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            s.Location = new Point(175, 243);
-            s.Name = "s";
-            s.Size = new Size(457, 132);
-            s.TabIndex = 1;
-            s.Text = "MODULE ORGANISATEUR";
-            s.UseVisualStyleBackColor = true;
-            s.Click += s_Click;
+            button2.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(102, 82);
+            button2.Name = "button2";
+            button2.Size = new Size(580, 112);
+            button2.TabIndex = 1;
+            button2.Text = "Créer un événement";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // FormHome
+            // FromOrga
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(s);
-            Controls.Add(btn_ModuleAgent);
-            Name = "FormHome";
-            Text = "Arkone Accueil";
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Name = "FromOrga";
+            Text = "Arkone Organisateur";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button btn_ModuleAgent;
-        private Button s;
+        private Button button1;
+        private Button button2;
     }
 }
