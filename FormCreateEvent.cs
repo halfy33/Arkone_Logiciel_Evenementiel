@@ -34,18 +34,26 @@ namespace Arkone_Logiciel_Evenementiel
                     string.IsNullOrWhiteSpace(txt_LieuEvent.Text) ||
                     string.IsNullOrWhiteSpace(txt_LatitudeEvent.Text) ||
                     string.IsNullOrWhiteSpace(txt_LongitudeEvent.Text) ||
-                    string.IsNullOrWhiteSpace(txt_DateEvent.Text))
+                    string.IsNullOrWhiteSpace(txt_HeureEvent.Text))
+
                 {
                     MessageBox.Show("Tous les champs doivent être remplis.");
                     return;
                 }
 
+                DateTime date = date_Picker1.Value.Date;
+
+                string heureStr = txt_HeureEvent.Text.Trim();
+
+
                 // Parsing de la date
-                if (!DateTime.TryParse(txt_DateEvent.Text, out DateTime dateEvenement))
+                if (!DateTime.TryParseExact(heureStr, "HH:mm", null, System.Globalization.DateTimeStyles.None, out DateTime heure))
                 {
-                    MessageBox.Show("Date invalide.");
+                    MessageBox.Show("Heure invalide. Format attendu : HH:mm (ex: 14:30)");
                     return;
                 }
+
+                DateTime dateTimeComplete = date.AddHours(heure.Hour).AddMinutes(heure.Minute);
 
                 // Création de l'objet événement
                 Evenement newEvent = new Evenement
@@ -54,7 +62,7 @@ namespace Arkone_Logiciel_Evenementiel
                     Lieu = txt_LieuEvent.Text,
                     Latitude = txt_LatitudeEvent.Text.Trim(),
                     Longitude = txt_LongitudeEvent.Text.Trim(),
-                    DateEvenement = dateEvenement
+                    DateEvenement = dateTimeComplete,
                 };
 
                 // Sauvegarde en base
@@ -70,12 +78,14 @@ namespace Arkone_Logiciel_Evenementiel
                 txt_LieuEvent.Text = "";
                 txt_LatitudeEvent.Text = "";
                 txt_LongitudeEvent.Text = "";
-                txt_DateEvent.Text = "";
+                txt_HeureEvent.Text = "";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur : " + ex.Message);
             }
         }
+
     }
 }
+

@@ -40,7 +40,9 @@
             btn_Retour = new Button();
             label6 = new Label();
             txt_LongitudeEvent = new TextBox();
-            txt_DateEvent = new DateTimePicker();
+            date_Picker1 = new DateTimePicker();
+            label7 = new Label();
+            txt_HeureEvent = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -55,7 +57,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(286, 328);
+            label2.Location = new Point(103, 338);
             label2.Name = "label2";
             label2.Size = new Size(52, 20);
             label2.TabIndex = 1;
@@ -146,19 +148,37 @@
             txt_LongitudeEvent.Size = new Size(125, 27);
             txt_LongitudeEvent.TabIndex = 12;
             // 
-            // txt_DateEvent
+            // date_Picker1
             // 
-            txt_DateEvent.Location = new Point(356, 328);
-            txt_DateEvent.Name = "txt_DateEvent";
-            txt_DateEvent.Size = new Size(250, 27);
-            txt_DateEvent.TabIndex = 13;
+            date_Picker1.Location = new Point(161, 335);
+            date_Picker1.Name = "date_Picker1";
+            date_Picker1.Size = new Size(250, 27);
+            date_Picker1.TabIndex = 13;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(459, 339);
+            label7.Name = "label7";
+            label7.Size = new Size(60, 20);
+            label7.TabIndex = 14;
+            label7.Text = "Heure : ";
+            // 
+            // txt_HeureEvent
+            // 
+            txt_HeureEvent.Location = new Point(525, 335);
+            txt_HeureEvent.Name = "txt_HeureEvent";
+            txt_HeureEvent.Size = new Size(94, 27);
+            txt_HeureEvent.TabIndex = 15;
             // 
             // FormCreateEvent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(txt_DateEvent);
+            Controls.Add(txt_HeureEvent);
+            Controls.Add(label7);
+            Controls.Add(date_Picker1);
             Controls.Add(txt_LongitudeEvent);
             Controls.Add(label6);
             Controls.Add(btn_Retour);
@@ -191,6 +211,8 @@
         private Button btn_Retour;
         private Label label6;
         private TextBox txt_LongitudeEvent;
-        private DateTimePicker txt_DateEvent;
+        private DateTimePicker date_Picker1;
+        private Label label7;
+        private TextBox txt_HeureEvent;
     }
 }
