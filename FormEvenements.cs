@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace Arkone_Logiciel_Evenementiel
 {
-    public partial class FromOrga : Form
+    public partial class FormEvenements : Form
     {
-        public FromOrga()
+        public FormEvenements()
         {
             InitializeComponent();
         }
 
-        //Ouvre une vue vers la liste des évènements
-        private void button1_Click(object sender, EventArgs e)
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FormEvenements formListEvenement = new FormEvenements();
-            formListEvenement.Show();  
+            FormDetailEvenement formSelectedEvenement = new FormDetailEvenement();
+            formSelectedEvenement.Show();
             this.Hide();
         }
     }

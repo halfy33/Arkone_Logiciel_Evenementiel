@@ -1,6 +1,6 @@
 ﻿namespace Arkone_Logiciel_Evenementiel
 {
-    partial class FromOrga
+    partial class FormEvenements
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            label1 = new Label();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
-            // button1
+            // label1
             // 
-            button1.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(103, 245);
-            button1.Name = "button1";
-            button1.Size = new Size(580, 114);
-            button1.TabIndex = 0;
-            button1.Text = "Consulter les événements";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(238, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(338, 46);
+            label1.TabIndex = 0;
+            label1.Text = "Liste des Évènements";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button2
+            // listBox1
             // 
-            button2.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(102, 82);
-            button2.Name = "button2";
-            button2.Size = new Size(580, 112);
-            button2.TabIndex = 1;
-            button2.Text = "Créer un événement";
-            button2.UseVisualStyleBackColor = true;
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(71, 71);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(672, 284);
+            listBox1.TabIndex = 1;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // FromOrga
+            // FormEvenements
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Name = "FromOrga";
-            Text = "Arkone Organisateur";
+            Controls.Add(listBox1);
+            Controls.Add(label1);
+            Name = "FormEvenements";
+            Text = "FormEvenements";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Label label1;
+        private ListBox listBox1;
     }
 }
