@@ -30,5 +30,12 @@ namespace Arkone_Logiciel_Evenementiel
             formListEvenement.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCreateUser formCreateUser = new FormCreateUser(selectedEvenement.IdEvenement);
+            formCreateUser.Show();
+            this.Hide();
+        }
     }
 }

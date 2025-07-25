@@ -1,0 +1,79 @@
+﻿using Arkone_Logiciel_Evenementiel.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Arkone_Logiciel_Evenementiel
+{
+    public partial class FormCreateUser : Form
+    {
+        private int idEvenementActuel;
+        public FormCreateUser(int idEvenement)
+        {
+            InitializeComponent();
+
+            idEvenementActuel = idEvenement;
+        }
+
+        private void btn_CreateUser_Click(object sender, EventArgs e)
+        {
+            // Vérification de base
+            if (string.IsNullOrWhiteSpace(txt_NameUser.Text) ||
+                string.IsNullOrWhiteSpace(txt_SurnameUser.Text) ||
+                string.IsNullOrWhiteSpace(txt_MailUser.Text) ||
+                string.IsNullOrWhiteSpace(txt_PhoneUser.Text))
+            {
+                MessageBox.Show("Tous les champs doivent être remplis.");
+                return;
+            }
+
+            try
+            {
+                using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
+                {
+                    Invite nouvelInvite = new Invite
+                    {
+                        Nom = txt_NameUser.Text.Trim(),
+                        Prenom = txt_SurnameUser.Text.Trim(),
+                        Mail = txt_MailUser.Text.Trim(),
+                        Telephone = txt_PhoneUser.Text.Trim()
+                    };
+
+                    db.Invites.Add(nouvelInvite);
+                    db.SaveChanges();
+
+
+                    db.Database.ExecuteSqlRaw("EXEC ps_GenererInvitation @p0, @p1", nouvelInvite.IdInvite, idEvenementActuel);
+                }
+
+
+
+                MessageBox.Show("Invité créé avec succès !");
+
+                // Nettoyer les champs
+                txt_NameUser.Clear();
+                txt_SurnameUser.Clear();
+                txt_MailUser.Clear();
+                txt_PhoneUser.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la création : " + ex.Message);
+            }
+        }
+
+        private void btn_Retour_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+    }
+}
+
