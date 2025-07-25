@@ -68,7 +68,7 @@
             Controls.Add(txt_VerifCode);
             Controls.Add(btn_VerifCode);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Arkone Agent";
             ResumeLayout(false);
             PerformLayout();
         }
