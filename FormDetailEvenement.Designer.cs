@@ -39,6 +39,7 @@
             label2 = new Label();
             label3 = new Label();
             btn_Retour = new Button();
+            label_evenementDescription = new Label();
             SuspendLayout();
             // 
             // label_nomEvenement
@@ -137,11 +138,22 @@
             btn_Retour.UseVisualStyleBackColor = true;
             btn_Retour.Click += btn_Retour_Click;
             // 
+            // label_evenementDescription
+            // 
+            label_evenementDescription.AutoSize = true;
+            label_evenementDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_evenementDescription.Location = new Point(12, 42);
+            label_evenementDescription.Name = "label_evenementDescription";
+            label_evenementDescription.Size = new Size(293, 31);
+            label_evenementDescription.TabIndex = 11;
+            label_evenementDescription.Text = "Description de l'évènement";
+            // 
             // FormDetailEvenement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(949, 541);
+            Controls.Add(label_evenementDescription);
             Controls.Add(btn_Retour);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -172,5 +184,6 @@
         private Label label2;
         private Label label3;
         private Button btn_Retour;
+        private Label label_evenementDescription;
     }
 }
