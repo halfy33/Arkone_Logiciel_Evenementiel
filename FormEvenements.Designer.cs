@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             listBox1 = new ListBox();
+            btn_Retour = new Button();
             SuspendLayout();
             // 
             // label1
@@ -52,11 +53,22 @@
             listBox1.TabIndex = 1;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
+            // btn_Retour
+            // 
+            btn_Retour.Location = new Point(6, 414);
+            btn_Retour.Name = "btn_Retour";
+            btn_Retour.Size = new Size(64, 29);
+            btn_Retour.TabIndex = 5;
+            btn_Retour.Text = "Retour";
+            btn_Retour.UseVisualStyleBackColor = true;
+            btn_Retour.Click += btn_Retour_Click;
+            // 
             // FormEvenements
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_Retour);
             Controls.Add(listBox1);
             Controls.Add(label1);
             Name = "FormEvenements";
@@ -69,5 +81,6 @@
 
         private Label label1;
         private ListBox listBox1;
+        private Button btn_Retour;
     }
 }

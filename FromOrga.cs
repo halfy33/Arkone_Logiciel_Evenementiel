@@ -28,8 +28,15 @@ namespace Arkone_Logiciel_Evenementiel
         private void button1_Click(object sender, EventArgs e)
         {
             FormEvenements formListEvenement = new FormEvenements();
-            formListEvenement.Show();  
+            formListEvenement.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCreateEvent home = new FormCreateEvent();
+            home.Show();
         }
     }
 }

@@ -53,6 +53,7 @@
             button2.TabIndex = 1;
             button2.Text = "Créer un événement";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // btn_Retour
             // 

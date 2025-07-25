@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Arkone_Logiciel_Evenementiel
 {
-    public partial class FormEvenements : Form
+    public partial class FormCreateEvent : Form
     {
-        public FormEvenements()
+        public FormCreateEvent()
         {
             InitializeComponent();
-        }
-
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FormDetailEvenement formSelectedEvenement = new FormDetailEvenement();
-            formSelectedEvenement.Show();
-            this.Hide();
         }
 
         private void btn_Retour_Click(object sender, EventArgs e)
