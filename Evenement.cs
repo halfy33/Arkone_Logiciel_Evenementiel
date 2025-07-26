@@ -39,5 +39,4 @@ public partial class Evenement
             return $"[Erreur : {ex.Message}]";
         }
     }
-
 }

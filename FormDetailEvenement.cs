@@ -27,6 +27,7 @@ namespace Arkone_Logiciel_Evenementiel
 
             // charge la liste des invités à l'évènement
             load_listeInvites(evenement);
+            load_notInvites(evenement);
         }
 
         private void btn_Retour_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace Arkone_Logiciel_Evenementiel
             {
                 var invites = db.Invitations
                     .Where(i => i.IdEvenement == idEvenement)
-                    .Include(i => i.IdInviteNavigation) // charge les données de l'invité (relation navigationnelle)
+                    .Include(i => i.IdInviteNavigation) // charge les données de l'invité
                     .Select(i => i.IdInviteNavigation)
                     .ToList();
 
@@ -52,7 +53,7 @@ namespace Arkone_Logiciel_Evenementiel
 
                 foreach (var invite in invites)
                 {
-                    listbox_invites.Items.Add(invite); // ou invite.NomPrenom si tu préfères du texte simple
+                    listbox_invites.Items.Add(invite);
                 }
             }
         }
@@ -62,6 +63,60 @@ namespace Arkone_Logiciel_Evenementiel
             FormCreateUser formCreateUser = new FormCreateUser(selectedEvenement.IdEvenement);
             formCreateUser.Show();
             this.Hide();
+        }
+
+        public void load_notInvites(Evenement evenement, string? filtreRecherche = null)
+        {
+            var idEvenement = evenement.IdEvenement;
+
+            using (var db = new ArkoneEnzoYanisContext())
+            {
+                // Invités non liés à l'événement
+                var invitesQuery = db.Invites
+                    .Where(invite => !db.Invitations
+                        .Where(i => i.IdEvenement == idEvenement)
+                        .Select(i => i.IdInvite)
+                        .Contains(invite.IdInvite));
+
+                // Appliquer le filtre si fourni (nom OU prénom contient la valeur)
+                if (!string.IsNullOrWhiteSpace(filtreRecherche))
+                {
+                    invitesQuery = invitesQuery.Where(i =>
+                        i.Nom.Contains(filtreRecherche) ||
+                        i.Prenom.Contains(filtreRecherche));
+                }
+
+                var invites = invitesQuery.ToList();
+
+                listbox_notInvite.Items.Clear();
+
+                foreach (var invite in invites)
+                {
+                    listbox_notInvite.Items.Add(invite);
+                }
+            }
+        }
+
+        private void btn_ajoutInvite_Click(object sender, EventArgs e)
+        {
+            if (listbox_notInvite.SelectedItem is Invite inv)
+            {
+                Invite selectedInvite = inv;
+
+                Invitation newInvitation = new Invitation();
+
+                newInvitation.AjouterInvitation(selectedEvenement, selectedInvite);
+
+                load_listeInvites(selectedEvenement);
+                load_notInvites(selectedEvenement);
+                label_evenementDescription.Text = selectedEvenement.ToString();
+
+            }
+        }
+
+        private void texbox_rechercheInvite_TextChanged(object sender, EventArgs e)
+        {
+            load_notInvites(selectedEvenement, texbox_rechercheInvite.Text);
         }
     }
 }
