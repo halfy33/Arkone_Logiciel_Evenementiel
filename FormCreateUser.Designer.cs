@@ -44,36 +44,36 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(281, 143);
+            label1.Location = new Point(246, 107);
             label1.Name = "label1";
-            label1.Size = new Size(53, 20);
+            label1.Size = new Size(43, 15);
             label1.TabIndex = 0;
             label1.Text = "Nom : ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(263, 191);
+            label2.Location = new Point(230, 143);
             label2.Name = "label2";
-            label2.Size = new Size(71, 20);
+            label2.Size = new Size(58, 15);
             label2.TabIndex = 1;
             label2.Text = "Prénom : ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(229, 246);
+            label3.Location = new Point(200, 184);
             label3.Name = "label3";
-            label3.Size = new Size(105, 20);
+            label3.Size = new Size(83, 15);
             label3.TabIndex = 2;
             label3.Text = "Adresse Mail : ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(245, 295);
+            label4.Location = new Point(214, 221);
             label4.Name = "label4";
-            label4.Size = new Size(89, 20);
+            label4.Size = new Size(71, 15);
             label4.TabIndex = 3;
             label4.Text = "Téléphone : ";
             // 
@@ -81,45 +81,50 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(259, 46);
+            label5.Location = new Point(227, 34);
             label5.Name = "label5";
-            label5.Size = new Size(303, 41);
+            label5.Size = new Size(237, 32);
             label5.TabIndex = 4;
             label5.Text = "Créer un invité";
             // 
             // txt_NameUser
             // 
-            txt_NameUser.Location = new Point(349, 136);
+            txt_NameUser.Location = new Point(305, 102);
+            txt_NameUser.Margin = new Padding(3, 2, 3, 2);
             txt_NameUser.Name = "txt_NameUser";
-            txt_NameUser.Size = new Size(125, 27);
+            txt_NameUser.Size = new Size(110, 23);
             txt_NameUser.TabIndex = 5;
             // 
             // txt_SurnameUser
             // 
-            txt_SurnameUser.Location = new Point(349, 188);
+            txt_SurnameUser.Location = new Point(305, 141);
+            txt_SurnameUser.Margin = new Padding(3, 2, 3, 2);
             txt_SurnameUser.Name = "txt_SurnameUser";
-            txt_SurnameUser.Size = new Size(125, 27);
+            txt_SurnameUser.Size = new Size(110, 23);
             txt_SurnameUser.TabIndex = 6;
             // 
             // txt_MailUser
             // 
-            txt_MailUser.Location = new Point(349, 243);
+            txt_MailUser.Location = new Point(305, 182);
+            txt_MailUser.Margin = new Padding(3, 2, 3, 2);
             txt_MailUser.Name = "txt_MailUser";
-            txt_MailUser.Size = new Size(125, 27);
+            txt_MailUser.Size = new Size(110, 23);
             txt_MailUser.TabIndex = 7;
             // 
             // txt_PhoneUser
             // 
-            txt_PhoneUser.Location = new Point(349, 295);
+            txt_PhoneUser.Location = new Point(305, 221);
+            txt_PhoneUser.Margin = new Padding(3, 2, 3, 2);
             txt_PhoneUser.Name = "txt_PhoneUser";
-            txt_PhoneUser.Size = new Size(125, 27);
+            txt_PhoneUser.Size = new Size(110, 23);
             txt_PhoneUser.TabIndex = 8;
             // 
             // btn_CreateUser
             // 
-            btn_CreateUser.Location = new Point(349, 364);
+            btn_CreateUser.Location = new Point(305, 273);
+            btn_CreateUser.Margin = new Padding(3, 2, 3, 2);
             btn_CreateUser.Name = "btn_CreateUser";
-            btn_CreateUser.Size = new Size(94, 29);
+            btn_CreateUser.Size = new Size(82, 22);
             btn_CreateUser.TabIndex = 9;
             btn_CreateUser.Text = "Créer";
             btn_CreateUser.UseVisualStyleBackColor = true;
@@ -127,18 +132,20 @@
             // 
             // btn_Retour
             // 
-            btn_Retour.Location = new Point(8, 413);
+            btn_Retour.Location = new Point(7, 310);
+            btn_Retour.Margin = new Padding(3, 2, 3, 2);
             btn_Retour.Name = "btn_Retour";
-            btn_Retour.Size = new Size(64, 29);
+            btn_Retour.Size = new Size(56, 22);
             btn_Retour.TabIndex = 11;
             btn_Retour.Text = "Retour";
             btn_Retour.UseVisualStyleBackColor = true;
+            btn_Retour.Click += btn_Retour_Click;
             // 
             // FormCreateUser
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btn_Retour);
             Controls.Add(btn_CreateUser);
             Controls.Add(txt_PhoneUser);
@@ -150,6 +157,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormCreateUser";
             Text = "FormCreateUser";
             ResumeLayout(false);

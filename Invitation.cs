@@ -46,10 +46,43 @@ namespace Arkone_Logiciel_Evenementiel
                 {
                     MessageBox.Show($"[Erreur : {ex.Message}]") ;
                 }
-
             }
+        }
 
+        public void CheckInInvitation(string? codeInvitation)
+        {
+            if (!string.IsNullOrWhiteSpace(codeInvitation) || codeInvitation.Length == 6)
+            {
+                try
+                {
+                    using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
+                    {
+                        var connection = db.Database.GetDbConnection();
+                        connection.Open();
 
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = "sp_ValiderPresence";
+                            command.CommandType = CommandType.StoredProcedure;
+
+                            var code = new SqlParameter("@code", codeInvitation);
+                            command.Parameters.Add(code);
+
+                            var result = command.ExecuteScalar(); // lit le champ "description"
+
+                            MessageBox.Show("Invitation Valide !");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"[Erreur : {ex.Message}]");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez Saisir un code valide");
+            }
         }
     }
 }

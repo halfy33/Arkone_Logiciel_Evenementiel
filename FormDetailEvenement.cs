@@ -37,32 +37,36 @@ namespace Arkone_Logiciel_Evenementiel
             this.Hide();
         }
 
-        private void load_listeInvites(Evenement evenement)
+        private void load_listeInvites(Evenement evenement, string? filtreRecherche = null)
         {
             int idEvenement = evenement.IdEvenement;
 
             using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
             {
-                var invites = db.Invitations
-                    .Where(i => i.IdEvenement == idEvenement)
-                    .Include(i => i.IdInviteNavigation) // charge les données de l'invité
-                    .Select(i => i.IdInviteNavigation)
-                    .ToList();
+                // Invités liés à l'événement
+                var invitesQuery = db.Invites
+                .Where(invite => db.Invitations
+                .Where(i => i.IdEvenement == idEvenement)
+                .Select(i => i.IdInvite)
+                .Contains(invite.IdInvite));
+
+                if (!string.IsNullOrWhiteSpace(filtreRecherche))
+                {
+                    invitesQuery = invitesQuery.Where(i =>
+                    i.Nom.Contains(filtreRecherche) ||
+                    i.Prenom.Contains(filtreRecherche));
+                }
+                ;
+
+                invitesQuery.ToList();
 
                 listbox_invites.Items.Clear();
 
-                foreach (var invite in invites)
+                foreach (var invite in invitesQuery)
                 {
                     listbox_invites.Items.Add(invite);
                 }
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormCreateUser formCreateUser = new FormCreateUser(selectedEvenement.IdEvenement);
-            formCreateUser.Show();
-            this.Hide();
         }
 
         public void load_notInvites(Evenement evenement, string? filtreRecherche = null)
@@ -86,11 +90,9 @@ namespace Arkone_Logiciel_Evenementiel
                         i.Prenom.Contains(filtreRecherche));
                 }
 
-                var invites = invitesQuery.ToList();
-
                 listbox_notInvite.Items.Clear();
 
-                foreach (var invite in invites)
+                foreach (var invite in invitesQuery)
                 {
                     listbox_notInvite.Items.Add(invite);
                 }
@@ -117,6 +119,18 @@ namespace Arkone_Logiciel_Evenementiel
         private void texbox_rechercheInvite_TextChanged(object sender, EventArgs e)
         {
             load_notInvites(selectedEvenement, texbox_rechercheInvite.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCreateUser formCreateUser = new FormCreateUser(selectedEvenement);
+            formCreateUser.Show();
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            load_listeInvites(selectedEvenement, textBox1.Text);
         }
     }
 }

@@ -14,12 +14,12 @@ namespace Arkone_Logiciel_Evenementiel
 {
     public partial class FormCreateUser : Form
     {
-        private int idEvenementActuel;
-        public FormCreateUser(int idEvenement)
+        private Evenement evenementActuel;
+
+        public FormCreateUser(Evenement evenement)
         {
             InitializeComponent();
-
-            idEvenementActuel = idEvenement;
+            evenementActuel = evenement;
         }
 
         private void btn_CreateUser_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Arkone_Logiciel_Evenementiel
                     db.SaveChanges();
 
 
-                    db.Database.ExecuteSqlRaw("EXEC ps_GenererInvitation @p0, @p1", nouvelInvite.IdInvite, idEvenementActuel);
+                    db.Database.ExecuteSqlRaw("EXEC ps_GenererInvitation @p0, @p1", nouvelInvite.IdInvite, evenementActuel.IdEvenement);
                 }
 
 
@@ -71,9 +71,10 @@ namespace Arkone_Logiciel_Evenementiel
 
         private void btn_Retour_Click(object sender, EventArgs e)
         {
-            
+            FormDetailEvenement previousForm = new FormDetailEvenement(evenementActuel);
+            previousForm.Show();
+            this.Hide();
         }
-
     }
 }
 

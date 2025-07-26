@@ -26,6 +26,14 @@ namespace Arkone_Logiciel_Evenementiel
                 e.Handled = true; // ignore le caractère
             }
         }
+
+        private void btn_VerifCode_Click(object sender, EventArgs e)
+        {
+            string code = txt_VerifCode.Text;
+
+            Invitation invitation = new Invitation();            
+            invitation.CheckInInvitation(code);
+        }
     }
 }
 
