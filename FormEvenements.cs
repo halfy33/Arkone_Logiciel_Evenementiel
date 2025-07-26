@@ -15,6 +15,7 @@ namespace Arkone_Logiciel_Evenementiel
     {
         public FormEvenements()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             list_evenement();
         }

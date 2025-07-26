@@ -14,8 +14,10 @@ namespace Arkone_Logiciel_Evenementiel
     {
         public FormHome()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             
+
         }
 
         private void btn_ModuleAgent_Click(object sender, EventArgs e)

@@ -48,65 +48,69 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(285, 96);
+            label1.Location = new Point(249, 72);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(40, 15);
             label1.TabIndex = 0;
             label1.Text = "Nom :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(103, 338);
+            label2.Location = new Point(90, 254);
             label2.Name = "label2";
-            label2.Size = new Size(52, 20);
+            label2.Size = new Size(40, 15);
             label2.TabIndex = 1;
             label2.Text = "Date : ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(264, 218);
+            label3.Location = new Point(231, 164);
             label3.Name = "label3";
-            label3.Size = new Size(70, 20);
+            label3.Size = new Size(56, 15);
             label3.TabIndex = 2;
             label3.Text = "Latitude :";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(291, 156);
+            label4.Location = new Point(255, 117);
             label4.Name = "label4";
-            label4.Size = new Size(47, 20);
+            label4.Size = new Size(38, 15);
             label4.TabIndex = 3;
             label4.Text = "Lieu : ";
             // 
             // txt_nameEvent
             // 
-            txt_nameEvent.Location = new Point(356, 90);
+            txt_nameEvent.Location = new Point(312, 68);
+            txt_nameEvent.Margin = new Padding(3, 2, 3, 2);
             txt_nameEvent.Name = "txt_nameEvent";
-            txt_nameEvent.Size = new Size(125, 27);
+            txt_nameEvent.Size = new Size(110, 23);
             txt_nameEvent.TabIndex = 4;
             // 
             // txt_LieuEvent
             // 
-            txt_LieuEvent.Location = new Point(356, 150);
+            txt_LieuEvent.Location = new Point(312, 112);
+            txt_LieuEvent.Margin = new Padding(3, 2, 3, 2);
             txt_LieuEvent.Name = "txt_LieuEvent";
-            txt_LieuEvent.Size = new Size(125, 27);
+            txt_LieuEvent.Size = new Size(110, 23);
             txt_LieuEvent.TabIndex = 5;
             // 
             // txt_LatitudeEvent
             // 
-            txt_LatitudeEvent.Location = new Point(356, 211);
+            txt_LatitudeEvent.Location = new Point(312, 158);
+            txt_LatitudeEvent.Margin = new Padding(3, 2, 3, 2);
             txt_LatitudeEvent.Name = "txt_LatitudeEvent";
-            txt_LatitudeEvent.Size = new Size(125, 27);
+            txt_LatitudeEvent.Size = new Size(110, 23);
             txt_LatitudeEvent.TabIndex = 6;
             // 
             // btn_CreateEvent
             // 
-            btn_CreateEvent.Location = new Point(368, 378);
+            btn_CreateEvent.Location = new Point(322, 284);
+            btn_CreateEvent.Margin = new Padding(3, 2, 3, 2);
             btn_CreateEvent.Name = "btn_CreateEvent";
-            btn_CreateEvent.Size = new Size(94, 29);
+            btn_CreateEvent.Size = new Size(82, 22);
             btn_CreateEvent.TabIndex = 8;
             btn_CreateEvent.Text = "Créer";
             btn_CreateEvent.UseVisualStyleBackColor = true;
@@ -116,17 +120,19 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(176, 19);
+            label5.Location = new Point(154, 14);
             label5.Name = "label5";
-            label5.Size = new Size(500, 41);
+            label5.Size = new Size(395, 32);
             label5.TabIndex = 9;
             label5.Text = "Création d'un événement";
+            label5.Click += label5_Click;
             // 
             // btn_Retour
             // 
-            btn_Retour.Location = new Point(8, 413);
+            btn_Retour.Location = new Point(7, 310);
+            btn_Retour.Margin = new Padding(3, 2, 3, 2);
             btn_Retour.Name = "btn_Retour";
-            btn_Retour.Size = new Size(64, 29);
+            btn_Retour.Size = new Size(56, 22);
             btn_Retour.TabIndex = 10;
             btn_Retour.Text = "Retour";
             btn_Retour.UseVisualStyleBackColor = true;
@@ -135,47 +141,50 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(251, 275);
+            label6.Location = new Point(220, 206);
             label6.Name = "label6";
-            label6.Size = new Size(83, 20);
+            label6.Size = new Size(67, 15);
             label6.TabIndex = 11;
             label6.Text = "Longitude :";
             // 
             // txt_LongitudeEvent
             // 
-            txt_LongitudeEvent.Location = new Point(356, 270);
+            txt_LongitudeEvent.Location = new Point(312, 202);
+            txt_LongitudeEvent.Margin = new Padding(3, 2, 3, 2);
             txt_LongitudeEvent.Name = "txt_LongitudeEvent";
-            txt_LongitudeEvent.Size = new Size(125, 27);
+            txt_LongitudeEvent.Size = new Size(110, 23);
             txt_LongitudeEvent.TabIndex = 12;
             // 
             // date_Picker1
             // 
-            date_Picker1.Location = new Point(161, 335);
+            date_Picker1.Location = new Point(141, 251);
+            date_Picker1.Margin = new Padding(3, 2, 3, 2);
             date_Picker1.Name = "date_Picker1";
-            date_Picker1.Size = new Size(250, 27);
+            date_Picker1.Size = new Size(219, 23);
             date_Picker1.TabIndex = 13;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(459, 339);
+            label7.Location = new Point(402, 254);
             label7.Name = "label7";
-            label7.Size = new Size(60, 20);
+            label7.Size = new Size(48, 15);
             label7.TabIndex = 14;
             label7.Text = "Heure : ";
             // 
             // txt_HeureEvent
             // 
-            txt_HeureEvent.Location = new Point(525, 335);
+            txt_HeureEvent.Location = new Point(459, 251);
+            txt_HeureEvent.Margin = new Padding(3, 2, 3, 2);
             txt_HeureEvent.Name = "txt_HeureEvent";
-            txt_HeureEvent.Size = new Size(94, 27);
+            txt_HeureEvent.Size = new Size(83, 23);
             txt_HeureEvent.TabIndex = 15;
             // 
             // FormCreateEvent
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(txt_HeureEvent);
             Controls.Add(label7);
             Controls.Add(date_Picker1);
@@ -191,6 +200,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormCreateEvent";
             Text = "Arkone Création Event";
             ResumeLayout(false);

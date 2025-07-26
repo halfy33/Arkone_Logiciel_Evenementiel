@@ -15,6 +15,7 @@ namespace Arkone_Logiciel_Evenementiel
     {
         public FormCreateEvent()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
@@ -86,6 +87,10 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

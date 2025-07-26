@@ -6,6 +6,7 @@ namespace Arkone_Logiciel_Evenementiel
     {
         public Form1()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             txt_VerifCode.MaxLength = 6;
 
