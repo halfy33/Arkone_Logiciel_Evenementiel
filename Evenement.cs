@@ -11,7 +11,7 @@ namespace Arkone_Logiciel_Evenementiel.Models;
 
 public partial class Evenement
 {
-    //Surcharge de la fonction pour appler un procédure stocké construisant une description (string) pour les évènements
+    //Surcharge de la fonction pour appler un procédure stocké construisant une description affichable pour les évènements
     public override string ToString()
     {
         try
@@ -29,7 +29,7 @@ public partial class Evenement
                     var param = new SqlParameter("@idEvenement", this.IdEvenement);
                     command.Parameters.Add(param);
 
-                    var result = command.ExecuteScalar(); // lit le champ "description"
+                    var result = command.ExecuteScalar();
 
                     return result?.ToString() ?? base.ToString();
                 }
