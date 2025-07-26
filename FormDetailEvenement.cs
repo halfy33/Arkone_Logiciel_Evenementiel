@@ -90,6 +90,8 @@ namespace Arkone_Logiciel_Evenementiel
                         i.Prenom.Contains(filtreRecherche));
                 }
 
+                invitesQuery.ToList();
+
                 listbox_notInvite.Items.Clear();
 
                 foreach (var invite in invitesQuery)

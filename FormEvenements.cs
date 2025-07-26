@@ -27,7 +27,7 @@ namespace Arkone_Logiciel_Evenementiel
                 FormDetailEvenement formSelectedEvenement = new FormDetailEvenement(evt);
                 formSelectedEvenement.Show();
                 this.Hide();
-            }           
+            }
         }
 
         private void btn_Retour_Click(object sender, EventArgs e)
@@ -37,23 +37,39 @@ namespace Arkone_Logiciel_Evenementiel
             home.Show();
         }
 
-        private void list_evenement()
+        private void list_evenement(string? filtreRecherche=null)
         {
             using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
             {
-                var evenements = db.Evenements
-                    .OrderBy(e => e.DateEvenement)
-                    .ToList();
+                // Liste les évènement
+                var evenementsQuery = db.Evenements.AsQueryable();
+
+                // Appliquer le filtre si fourni (nom OU lieu contient la valeur)
+                if (!string.IsNullOrWhiteSpace(filtreRecherche))
+                {
+                    evenementsQuery = evenementsQuery.Where(e =>
+                        e.NomEvenement.Contains(filtreRecherche) ||
+                        e.Lieu.Contains(filtreRecherche));
+                }
+
+                // Tri par date croissante
+                evenementsQuery = evenementsQuery.OrderBy(e => e.DateEvenement);
+
+                // Exécution
+                var evenements = evenementsQuery.ToList();
 
                 listbox_evenement.Items.Clear(); // Vide la liste avant ajout
 
-                foreach (var evt in evenements)
+                foreach (var evt in evenementsQuery)
                 {
                     listbox_evenement.Items.Add(evt); // Appelle automatiquement evt.ToString()
                 }
             }
         }
 
-       
+        private void textbox_recherchEvenement_TextChanged(object sender, EventArgs e)
+        {
+            list_evenement(textbox_recherchEvenement.Text);
+        }
     }
 }
