@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 namespace Arkone_Logiciel_Evenementiel
 {
     internal class Invitation
-    {
+    {   
+        //Appel d'un procédure stocké pour générer un invitation qui asssocie un client et un évènement
         public void AjouterInvitation(Evenement selsectedEvenemet, Invite SelectedInvite)
         {
             if (SelectedInvite != null)
@@ -49,6 +50,7 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        //Valide la présence via une procédure stockée en passant la statut de présence à 1 dans l'invitation
         public void CheckInInvitation(string? codeInvitation)
         {
             if (!string.IsNullOrWhiteSpace(codeInvitation) || codeInvitation.Length == 6)

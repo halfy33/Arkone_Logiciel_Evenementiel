@@ -19,14 +19,14 @@ namespace Arkone_Logiciel_Evenementiel
             
 
         }
-
+        //Accès à la saisie de code d'inviation
         private void btn_ModuleAgent_Click(object sender, EventArgs e)
         {
             Form1 monForm = new Form1();
             monForm.Show();
             this.Hide();
         }
-
+        //Accès au menu Organisation
         private void s_Click(object sender, EventArgs e)
         {
             FromOrga formOrga = new FromOrga();

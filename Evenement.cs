@@ -11,6 +11,7 @@ namespace Arkone_Logiciel_Evenementiel.Models;
 
 public partial class Evenement
 {
+    //Surcharge de la fonction pour appler un procédure stocké construisant une description (string) pour les évènements
     public override string ToString()
     {
         try

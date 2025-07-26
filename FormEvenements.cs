@@ -20,7 +20,7 @@ namespace Arkone_Logiciel_Evenementiel
             list_evenement();
         }
 
-
+        //Ouvre le détail de l'évènement lorsqu'on clique dessus
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listbox_evenement.SelectedItem is Evenement evt)
@@ -30,14 +30,15 @@ namespace Arkone_Logiciel_Evenementiel
                 this.Hide();
             }
         }
-
+        //retour page précédente -> Menu Orga
         private void btn_Retour_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FromOrga home = new FromOrga();
-            home.Show();
+            FromOrga menuOrga = new FromOrga();
+            menuOrga.Show();
         }
 
+        //liste les éléments avec filtrage dynamique (en fonction du nom ou du lieu)
         private void list_evenement(string? filtreRecherche=null)
         {
             using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
@@ -68,6 +69,7 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        //actualise la liste à chaque changement de champ
         private void textbox_recherchEvenement_TextChanged(object sender, EventArgs e)
         {
             list_evenement(textbox_recherchEvenement.Text);

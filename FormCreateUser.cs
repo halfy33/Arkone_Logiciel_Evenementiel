@@ -14,6 +14,7 @@ namespace Arkone_Logiciel_Evenementiel
 {
     public partial class FormCreateUser : Form
     {
+        //Création d'un variable globale pour garder en mémoire l'évènement en cours
         private Evenement evenementActuel;
 
         public FormCreateUser(Evenement evenement)
@@ -23,6 +24,7 @@ namespace Arkone_Logiciel_Evenementiel
             evenementActuel = evenement;
         }
 
+        //Ajout d'un invité dans la base et génération de l'invitation pour l'évènement
         private void btn_CreateUser_Click(object sender, EventArgs e)
         {
             // Vérification de base
@@ -70,6 +72,7 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        //Retour page précédente
         private void btn_Retour_Click(object sender, EventArgs e)
         {
             FormDetailEvenement previousForm = new FormDetailEvenement(evenementActuel);

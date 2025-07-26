@@ -125,7 +125,6 @@
             label5.Size = new Size(395, 32);
             label5.TabIndex = 9;
             label5.Text = "Création d'un événement";
-            label5.Click += label5_Click;
             // 
             // btn_Retour
             // 

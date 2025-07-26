@@ -13,7 +13,8 @@ using Microsoft.EntityFrameworkCore;
 namespace Arkone_Logiciel_Evenementiel
 {
     public partial class FormDetailEvenement : Form
-    {
+    {   
+        //Création d'un variable globale pour garder en mémoire l'évènement en cours
         private Evenement selectedEvenement;
 
         public FormDetailEvenement(Evenement evenement)
@@ -31,6 +32,7 @@ namespace Arkone_Logiciel_Evenementiel
             load_notInvites(evenement);
         }
 
+        //Retour page précédente
         private void btn_Retour_Click(object sender, EventArgs e)
         {
             FormEvenements formListEvenement = new FormEvenements();
@@ -38,13 +40,13 @@ namespace Arkone_Logiciel_Evenementiel
             this.Hide();
         }
 
+        //Charge la liste des personnes invités à l'évènement
         private void load_listeInvites(Evenement evenement, string? filtreRecherche = null)
         {
             int idEvenement = evenement.IdEvenement;
 
             using (ArkoneEnzoYanisContext db = new ArkoneEnzoYanisContext())
             {
-                // Invités liés à l'événement
                 var invitesQuery = db.Invites
                 .Where(invite => db.Invitations
                 .Where(i => i.IdEvenement == idEvenement)
@@ -70,6 +72,7 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        //Charge la liste des personnes par encore invités à l'évènement
         public void load_notInvites(Evenement evenement, string? filtreRecherche = null)
         {
             var idEvenement = evenement.IdEvenement;
@@ -102,6 +105,7 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        //Création d'un invitations
         private void btn_ajoutInvite_Click(object sender, EventArgs e)
         {
             if (listbox_notInvite.SelectedItem is Invite inv)
@@ -119,11 +123,17 @@ namespace Arkone_Logiciel_Evenementiel
             }
         }
 
+        //recharge les listes à chaque changement de valeur dans les filtres
         private void texbox_rechercheInvite_TextChanged(object sender, EventArgs e)
         {
             load_notInvites(selectedEvenement, texbox_rechercheInvite.Text);
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            load_listeInvites(selectedEvenement, textBox1.Text);
+        }
 
+        //Ouvre le formulaire de création d'utilisateur
         private void button2_Click(object sender, EventArgs e)
         {
             FormCreateUser formCreateUser = new FormCreateUser(selectedEvenement);
@@ -131,9 +141,6 @@ namespace Arkone_Logiciel_Evenementiel
             this.Hide();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            load_listeInvites(selectedEvenement, textBox1.Text);
-        }
+        
     }
 }

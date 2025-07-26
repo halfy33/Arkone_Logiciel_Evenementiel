@@ -26,6 +26,7 @@ namespace Arkone_Logiciel_Evenementiel
             home.Show();
         }
 
+        //Création d'un nouvel évènement en base de données
         private void btn_CreateEvent_Click(object sender, EventArgs e)
         {
             try
@@ -85,11 +86,6 @@ namespace Arkone_Logiciel_Evenementiel
             {
                 MessageBox.Show("Erreur : " + ex.Message);
             }
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

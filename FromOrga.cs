@@ -18,6 +18,7 @@ namespace Arkone_Logiciel_Evenementiel
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        //Retour au menu
         private void btn_Retour_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -33,11 +34,12 @@ namespace Arkone_Logiciel_Evenementiel
             this.Hide();
         }
 
+        //Accès à la craétion d'un évènement
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormCreateEvent home = new FormCreateEvent();
-            home.Show();
+            FormCreateEvent newEvenement = new FormCreateEvent();
+            newEvenement.Show();
         }
     }
 }
