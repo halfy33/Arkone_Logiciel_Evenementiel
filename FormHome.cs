@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Arkone_Logiciel_Evenementiel
 {
-    public partial class FormHome : BaseForm
+    public partial class FormHome : Form
     {
         public FormHome()
         {
