@@ -28,8 +28,8 @@ namespace Arkone_Logiciel_Evenementiel
         private void btn_CreateUser_Click(object sender, EventArgs e)
         {
             // Vérification de base
-            if (string.IsNullOrWhiteSpace(txt_NameUser.Text) ||
-                string.IsNullOrWhiteSpace(txt_SurnameUser.Text) ||
+            if (string.IsNullOrWhiteSpace(txt_SurnameUser.Text) ||
+                string.IsNullOrWhiteSpace(txt_NameUser.Text) ||
                 string.IsNullOrWhiteSpace(txt_MailUser.Text) ||
                 string.IsNullOrWhiteSpace(txt_PhoneUser.Text))
             {
@@ -43,8 +43,8 @@ namespace Arkone_Logiciel_Evenementiel
                 {
                     Invite nouvelInvite = new Invite
                     {
-                        Nom = txt_NameUser.Text.Trim(),
-                        Prenom = txt_SurnameUser.Text.Trim(),
+                        Nom = txt_SurnameUser.Text.Trim(),
+                        Prenom = txt_NameUser.Text.Trim(),
                         Mail = txt_MailUser.Text.Trim(),
                         Telephone = txt_PhoneUser.Text.Trim()
                     };
@@ -63,8 +63,8 @@ namespace Arkone_Logiciel_Evenementiel
                 MessageBox.Show("Invité créé avec succès !");
 
                 // Nettoyer les champs
-                txt_NameUser.Clear();
                 txt_SurnameUser.Clear();
+                txt_NameUser.Clear();
                 txt_MailUser.Clear();
                 txt_PhoneUser.Clear();
             }

@@ -33,8 +33,8 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            txt_NameUser = new TextBox();
             txt_SurnameUser = new TextBox();
+            txt_NameUser = new TextBox();
             txt_MailUser = new TextBox();
             txt_PhoneUser = new TextBox();
             btn_CreateUser = new Button();
@@ -87,21 +87,21 @@
             label5.TabIndex = 4;
             label5.Text = "Créer un invité";
             // 
-            // txt_NameUser
-            // 
-            txt_NameUser.Location = new Point(305, 102);
-            txt_NameUser.Margin = new Padding(3, 2, 3, 2);
-            txt_NameUser.Name = "txt_NameUser";
-            txt_NameUser.Size = new Size(110, 23);
-            txt_NameUser.TabIndex = 5;
-            // 
             // txt_SurnameUser
             // 
-            txt_SurnameUser.Location = new Point(305, 141);
+            txt_SurnameUser.Location = new Point(305, 102);
             txt_SurnameUser.Margin = new Padding(3, 2, 3, 2);
             txt_SurnameUser.Name = "txt_SurnameUser";
             txt_SurnameUser.Size = new Size(110, 23);
-            txt_SurnameUser.TabIndex = 6;
+            txt_SurnameUser.TabIndex = 5;
+            // 
+            // txt_NameUser
+            // 
+            txt_NameUser.Location = new Point(305, 141);
+            txt_NameUser.Margin = new Padding(3, 2, 3, 2);
+            txt_NameUser.Name = "txt_NameUser";
+            txt_NameUser.Size = new Size(110, 23);
+            txt_NameUser.TabIndex = 6;
             // 
             // txt_MailUser
             // 
@@ -150,8 +150,8 @@
             Controls.Add(btn_CreateUser);
             Controls.Add(txt_PhoneUser);
             Controls.Add(txt_MailUser);
-            Controls.Add(txt_SurnameUser);
             Controls.Add(txt_NameUser);
+            Controls.Add(txt_SurnameUser);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -171,8 +171,8 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox txt_NameUser;
         private TextBox txt_SurnameUser;
+        private TextBox txt_NameUser;
         private TextBox txt_MailUser;
         private TextBox txt_PhoneUser;
         private Button btn_CreateUser;
