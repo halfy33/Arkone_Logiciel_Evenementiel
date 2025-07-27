@@ -5,13 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Arkone_Logiciel_Evenementiel
 {
     internal class Invitation
-    {   
+    {
         //Appel d'un procédure stocké pour générer un invitation qui asssocie un client et un évènement
         public void AjouterInvitation(Evenement selsectedEvenemet, Invite SelectedInvite)
         {
@@ -32,20 +34,32 @@ namespace Arkone_Logiciel_Evenementiel
                             command.CommandText = "ps_GenererInvitation";
                             command.CommandType = CommandType.StoredProcedure;
 
-                            var evenement = new SqlParameter("@idEvenement", idEvenement); 
-                            var invite = new SqlParameter("@idInvite", idInvite); 
+                            var evenement = new SqlParameter("@idEvenement", idEvenement);
+                            var invite = new SqlParameter("@idInvite", idInvite);
                             command.Parameters.Add(evenement);
                             command.Parameters.Add(invite);
 
-                            var result = command.ExecuteScalar();
-
-                            MessageBox.Show("Invité aves succès !");
+                            command.ExecuteNonQuery();
                         }
+
+                        var invitationGeneree = db.Invitations
+                            .FirstOrDefault(i => i.IdEvenement == idEvenement && i.IdInvite == idInvite);
+
+                        if (invitationGeneree != null && !string.IsNullOrEmpty(invitationGeneree.Code))
+                        {
+                            this.EnvoyerEmailBrevo(SelectedInvite, selsectedEvenemet, invitationGeneree.Code);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Le code d'invitation n'a pas pu être récupéré.");
+                        }
+
+                        MessageBox.Show("Invité avec succès !");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"[Erreur : {ex.Message}]") ;
+                    MessageBox.Show($"[Erreur : {ex.Message}]");
                 }
             }
         }
@@ -84,6 +98,39 @@ namespace Arkone_Logiciel_Evenementiel
             else
             {
                 MessageBox.Show("Veuillez Saisir un code valide");
+            }
+        }
+
+
+
+        public void EnvoyerEmailBrevo(Invite invite, Evenement evenement, string code)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("bertobambi@gmail.com", "Arkone Team");
+                mail.To.Add(invite.Mail);
+                mail.Subject = "Invitation à l'événement " + evenement.NomEvenement;
+
+                mail.Body = $@"
+                    Bonjour {invite.Prenom} {invite.Nom},
+
+                    Vous êtes invité à l'événement : {evenement.NomEvenement}.
+
+                    Voici votre code d'accès : {code}
+
+                    À très bientôt !
+                    ";
+
+                SmtpClient smtp = new SmtpClient("smtp-relay.brevo.com", 587);
+                smtp.Credentials = new NetworkCredential("934039001@smtp-brevo.com", "Uq8hjDPcmndLTzfb");
+                smtp.EnableSsl = true;
+
+                smtp.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'envoi du mail : " + ex.Message);
             }
         }
     }
