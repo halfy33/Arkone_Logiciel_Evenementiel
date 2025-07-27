@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,13 +58,9 @@ namespace Arkone_Logiciel_Evenementiel
                     db.Invites.Add(nouvelInvite);
                     db.SaveChanges();
 
-                    Invitation newInvitation = new Invitation();
-
-                    newInvitation.AjouterInvitation(evenementActuel, nouvelInvite);
-                    //db.Database.ExecuteSqlRaw("EXEC ps_GenererInvitation @p0, @p1", nouvelInvite.IdInvite, evenementActuel.IdEvenement);
+                    Invitation gestionnaireInvitation = new Invitation(); // création d'instance de la classe Invitation
+                    gestionnaireInvitation.AjouterInvitation(evenementActuel, nouvelInvite); // Appel de la méthode pour ajouter l'invitation
                 }
-
-
 
                 MessageBox.Show("Invité créé avec succès !");
 
@@ -71,7 +69,9 @@ namespace Arkone_Logiciel_Evenementiel
                 txt_NameUser.Clear();
                 txt_MailUser.Clear();
                 txt_PhoneUser.Clear();
+
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de la création : " + ex.Message);
@@ -85,6 +85,8 @@ namespace Arkone_Logiciel_Evenementiel
             previousForm.Show();
             this.Hide();
         }
+
+       
     }
 }
 
