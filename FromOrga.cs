@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Arkone_Logiciel_Evenementiel
 {
-    public partial class FromOrga : Form
+    public partial class FromOrga : BaseForm
     {
         public FromOrga()
         {

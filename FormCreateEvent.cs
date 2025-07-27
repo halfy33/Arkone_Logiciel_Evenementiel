@@ -16,6 +16,7 @@ namespace Arkone_Logiciel_Evenementiel
         public FormCreateEvent()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += btn_Retour_Click;
             InitializeComponent();
         }
 

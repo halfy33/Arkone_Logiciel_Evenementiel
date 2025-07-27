@@ -14,12 +14,16 @@ namespace Arkone_Logiciel_Evenementiel
 {
     public partial class FormCreateUser : Form
     {
+
+        
+
         //Création d'un variable globale pour garder en mémoire l'évènement en cours
         private Evenement evenementActuel;
 
         public FormCreateUser(Evenement evenement)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += btn_Retour_Click;
             InitializeComponent();
             evenementActuel = evenement;
         }

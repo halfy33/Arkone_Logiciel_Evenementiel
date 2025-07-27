@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Arkone_Logiciel_Evenementiel
 {
-    public partial class FormEvenements : Form
+    public partial class FormEvenements : BaseForm
     {
         public FormEvenements()
         {

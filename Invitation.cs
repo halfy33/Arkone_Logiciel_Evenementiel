@@ -37,7 +37,7 @@ namespace Arkone_Logiciel_Evenementiel
                             command.Parameters.Add(evenement);
                             command.Parameters.Add(invite);
 
-                            var result = command.ExecuteScalar(); // lit le champ "description"
+                            var result = command.ExecuteScalar();
 
                             MessageBox.Show("Invité aves succès !");
                         }
