@@ -11,6 +11,6 @@ public partial class Invite
     //Surcharge de la fonction pour afficher les élément de l'objet
     public override string ToString()
     {
-        return (this.Nom + " " + this.Prenom);
+        return (this.Nom + " " + this.Prenom + " - " + this.Telephone);
     }
 }
