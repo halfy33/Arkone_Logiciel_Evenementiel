@@ -85,7 +85,18 @@ namespace Arkone_Logiciel_Evenementiel
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur : " + ex.Message);
+                if (ex.InnerException?.Message.Contains("CK_Evenement_Latitude") == true)
+                {
+                    MessageBox.Show("La latitude doit être un nombre entre 41.3030 et 51.1242 (coordonnées valides en France).");
+                }
+                else if (ex.InnerException?.Message.Contains("CK_Evenement_Longitude") == true)
+                {
+                    MessageBox.Show("La longitude doit être un nombre entre -5.1422 et 9.5616 (coordonnées valides en France).");
+                }
+                else
+                {
+                    MessageBox.Show("Erreur lors de l'enregistrement : " + ex.InnerException?.Message);
+                }
             }
         }
     }
