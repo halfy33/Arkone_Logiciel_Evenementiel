@@ -43,6 +43,8 @@
             date_Picker1 = new DateTimePicker();
             label7 = new Label();
             txt_HeureEvent = new TextBox();
+            label_latitude = new Label();
+            label_longitude = new Label();
             SuspendLayout();
             // 
             // label1
@@ -179,11 +181,31 @@
             txt_HeureEvent.Size = new Size(83, 23);
             txt_HeureEvent.TabIndex = 15;
             // 
+            // label_latitude
+            // 
+            label_latitude.AutoSize = true;
+            label_latitude.Location = new Point(428, 164);
+            label_latitude.Name = "label_latitude";
+            label_latitude.Size = new Size(140, 15);
+            label_latitude.TabIndex = 16;
+            label_latitude.Text = "41.3030 < entre < 51.1242";
+            // 
+            // label_longitude
+            // 
+            label_longitude.AutoSize = true;
+            label_longitude.Location = new Point(430, 203);
+            label_longitude.Name = "label_longitude";
+            label_longitude.Size = new Size(133, 15);
+            label_longitude.TabIndex = 17;
+            label_longitude.Text = "-5.1422 < entre < 9.5616";
+            // 
             // FormCreateEvent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(label_longitude);
+            Controls.Add(label_latitude);
             Controls.Add(txt_HeureEvent);
             Controls.Add(label7);
             Controls.Add(date_Picker1);
@@ -223,5 +245,7 @@
         private DateTimePicker date_Picker1;
         private Label label7;
         private TextBox txt_HeureEvent;
+        private Label label_latitude;
+        private Label label_longitude;
     }
 }
