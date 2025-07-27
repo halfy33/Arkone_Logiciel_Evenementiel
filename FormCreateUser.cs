@@ -52,8 +52,10 @@ namespace Arkone_Logiciel_Evenementiel
                     db.Invites.Add(nouvelInvite);
                     db.SaveChanges();
 
+                    Invitation newInvitation = new Invitation();
 
-                    db.Database.ExecuteSqlRaw("EXEC ps_GenererInvitation @p0, @p1", nouvelInvite.IdInvite, evenementActuel.IdEvenement);
+                    newInvitation.AjouterInvitation(evenementActuel, nouvelInvite);
+                    //db.Database.ExecuteSqlRaw("EXEC ps_GenererInvitation @p0, @p1", nouvelInvite.IdInvite, evenementActuel.IdEvenement);
                 }
 
 
