@@ -159,7 +159,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormCreateUser";
-            Text = "FormCreateUser";
+            Text = "Arkone Créer invité";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -201,7 +201,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormCreateEvent";
-            Text = "Arkone Création Event";
+            Text = "Arkone Créer Event";
             ResumeLayout(false);
             PerformLayout();
         }

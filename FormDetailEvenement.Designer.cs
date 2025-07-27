@@ -180,7 +180,7 @@
             Controls.Add(label_nomEvenement);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormDetailEvenement";
-            Text = "FormDetailEvenement";
+            Text = "Arkone Details des événements";
             ResumeLayout(false);
             PerformLayout();
         }

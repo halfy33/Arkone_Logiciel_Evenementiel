@@ -86,7 +86,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormEvenements";
-            Text = "FormEvenements";
+            Text = "Arkone Events";
             ResumeLayout(false);
             PerformLayout();
         }
