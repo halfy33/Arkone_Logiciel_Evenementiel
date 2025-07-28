@@ -15,9 +15,8 @@ namespace Arkone_Logiciel_Evenementiel
         public FormHome()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
-            InitializeComponent();
-            
-
+            this.FormClosing += FormHome_FormClosing;
+            InitializeComponent();            
         }
         //Accès à la saisie de code d'inviation
         private void btn_ModuleAgent_Click(object sender, EventArgs e)
@@ -32,6 +31,11 @@ namespace Arkone_Logiciel_Evenementiel
             FromOrga formOrga = new FromOrga();
             formOrga.Show();
             this.Hide();
+        }
+
+        private void FormHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Ferme toute l'application
         }
     }
 }

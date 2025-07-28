@@ -12,8 +12,6 @@ namespace Arkone_Logiciel_Evenementiel
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FormHome());
-
-
         }
     }
 }
